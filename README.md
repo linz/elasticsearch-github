@@ -1,8 +1,3 @@
-# Template Hello World (Javascript)
+# Track github usage analytics with elasticsearch
 
-### _A minimal template for Javascript development_
-
-
-## Why?
-
-This repository exists to show a working example of Typescript formatting, linting and publishing with continuous integration.
+Listen to github webhooks and store results into elasticsearch.

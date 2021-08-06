@@ -1,0 +1,4 @@
+
+{
+    "app": "node build/src/infra/index.js"
+}
