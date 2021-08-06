@@ -93,10 +93,10 @@ class LambdaRequest {
       if (res == null) continue;
       logger.info({ name: action.name }, 'Hook');
       await client.index({ index: res.index, body: res.body, id: hookId });
-      break;
+      return new LambdaResponse(this, 200, 'ok');
     }
 
-    return new LambdaResponse(this, 200, 'ok');
+    return new LambdaResponse(this, 400, 'Failed to process');
   }
 }
 
@@ -114,7 +114,7 @@ export async function handler(event: APIGatewayEvent, _ctx: unknown, callback: A
     }
   }
 
-  if (res.status > 400) logger.error({ id: req.id, status: res.status }, res.body);
+  if (res.status >= 400) logger.error({ id: req.id, status: res.status }, res.body);
   else logger.info({ id: req.id, status: res.status }, res.body);
   callback(null, res.toJson());
 }
