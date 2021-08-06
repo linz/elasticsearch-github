@@ -90,7 +90,7 @@ class LambdaRequest {
     for (const action of HookActions) {
       if (!action.is(hookType, hook)) continue;
       const res = action.process(hook);
-      if (res == null) continue;
+      if (res == null) return new LambdaResponse(this, 200, 'skipped');
       logger.info({ name: action.name }, 'Hook');
       await client.index({ index: res.index, body: res.body, id: hookId });
       return new LambdaResponse(this, 200, 'ok');
