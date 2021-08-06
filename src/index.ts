@@ -96,6 +96,17 @@ class LambdaRequest {
       return new LambdaResponse(this, 200, 'ok');
     }
 
+    logger.error(
+      {
+        id: this.id,
+        hookType,
+        hookId,
+        matches: HookActions.map((c) => {
+          return { name: c.name, is: c.is(hookType, hook) };
+        }),
+      },
+      'Failed to find matching hook action',
+    );
     return new LambdaResponse(this, 400, 'Failed to process');
   }
 }
