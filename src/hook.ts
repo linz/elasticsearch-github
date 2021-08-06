@@ -6,7 +6,7 @@ export function indexName(org: string, type: string, date: string): string {
 
 export interface HookIndex {
   index: string;
-  body: Record<string, unknown> & { '@timestamp': string };
+  body: Record<string, unknown> & { '@timestamp': string; '@type': string };
 }
 
 export interface HookAction<T extends WebHookEnterpriseEvent> {

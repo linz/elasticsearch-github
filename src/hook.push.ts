@@ -15,6 +15,7 @@ export const PushAction: HookAction<PushEvent> = {
       index: indexName(orgId, 'push', hook.head_commit.timestamp),
       body: {
         '@timestamp': hook.head_commit.timestamp,
+        '@type': 'push',
         ...hook,
         repository: hook.repository.full_name,
         sender: hook.sender.login,

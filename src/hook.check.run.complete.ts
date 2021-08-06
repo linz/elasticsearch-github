@@ -14,6 +14,7 @@ export const CheckRunAction: HookAction<CheckRunCompletedEvent> = {
       index: indexName(orgId, 'check', hook.check_run.completed_at),
       body: {
         '@timestamp': hook.check_run.completed_at,
+        '@type': 'check_run',
 
         ...hook,
         check_run: {
