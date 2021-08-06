@@ -6,6 +6,7 @@ import pino from 'pino';
 import * as ulid from 'ulid';
 import { HookAction } from './hook';
 import { CheckRunAction } from './hook.check.run.complete';
+import { IssueCommentAction } from './hook.issue.comment';
 import { PullRequestCommentAction } from './hook.pr.comment';
 import { PushAction } from './hook.push';
 
@@ -47,7 +48,12 @@ class LambdaResponse {
   }
 }
 
-const HookActions: HookAction<WebhookEvent>[] = [CheckRunAction, PushAction, PullRequestCommentAction];
+const HookActions: HookAction<WebhookEvent>[] = [
+  CheckRunAction,
+  PushAction,
+  PullRequestCommentAction,
+  IssueCommentAction,
+];
 
 class LambdaRequest {
   id: string;
