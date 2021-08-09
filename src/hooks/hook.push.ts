@@ -11,7 +11,7 @@ export const PushAction: HookAction<PushEvent> = {
     if (hook.commits.length === 0) return null;
     return {
       prefix: 'push',
-      timestamp: hook.commits[0].timestamp,
+      timestamp: new Date().toISOString(),
       hook,
     };
   },
