@@ -8,10 +8,10 @@ export const PushAction: HookAction<PushEvent> = {
   },
 
   process(hook: PushEvent & WebhookEnterprise): HookIndex | null {
-    if (hook.head_commit == null) return null;
+    if (hook.commits.length === 0) return null;
     return {
       prefix: 'push',
-      timestamp: hook.head_commit.timestamp,
+      timestamp: hook.commits[0].timestamp,
       hook,
     };
   },
