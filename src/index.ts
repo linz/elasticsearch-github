@@ -4,11 +4,9 @@ import type { APIGatewayEvent, APIGatewayProxyCallback, APIGatewayProxyResult } 
 import { createHmac } from 'crypto';
 import pino from 'pino';
 import * as ulid from 'ulid';
-import { HookAction } from './hook';
-import { CheckRunAction } from './hook.check.run.complete';
-import { IssueCommentAction } from './hook.issue.comment';
-import { PullRequestCommentAction } from './hook.pr.comment';
-import { PushAction } from './hook.push';
+import { cleanHook } from './clean';
+import { indexName } from './hook';
+import { HookActions } from './hooks';
 
 const logger = pino();
 
@@ -47,13 +45,6 @@ class LambdaResponse {
     };
   }
 }
-
-const HookActions: HookAction<WebhookEvent>[] = [
-  CheckRunAction,
-  PushAction,
-  PullRequestCommentAction,
-  IssueCommentAction,
-];
 
 class LambdaRequest {
   id: string;
@@ -98,7 +89,14 @@ class LambdaRequest {
       const res = action.process(hook);
       if (res == null) return new LambdaResponse(this, 200, 'skipped');
       logger.info({ name: action.name }, 'Hook');
-      await client.index({ index: res.index, body: res.body, id: hookId });
+
+      const cleaned = cleanHook(res.hook);
+
+      cleaned['@timestamp'] = res.timestamp;
+      cleaned['@type'] = action.name;
+
+      const index = indexName(res.prefix, res.timestamp);
+      await client.index({ index: index, body: res.hook, id: hookId });
       return new LambdaResponse(this, 200, 'ok');
     }
 

@@ -1,12 +1,13 @@
 import { WebhookEvent } from '@octokit/webhooks-types';
 
-export function indexName(org: string, type: string, date: string): string {
-  return `github-hook-${org}-${type}-${date.slice(0, 7)}`;
+export function indexName(type: string, date: string): string {
+  return `github-hook-${type}-${date.slice(0, 7)}`;
 }
 
 export interface HookIndex {
-  index: string;
-  body: Record<string, unknown> & { '@timestamp': string; '@type': string };
+  prefix: string;
+  timestamp: string;
+  hook: WebHookEnterpriseEvent;
 }
 
 export interface HookAction<T extends WebHookEnterpriseEvent> {
