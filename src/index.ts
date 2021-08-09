@@ -36,7 +36,7 @@ export const handler = LambdaFunction.wrap(async (req: LambdaHttpRequest): Promi
     if (!action.is(hookType, hook)) continue;
     const res = action.process(hook);
     if (res == null) return new LambdaHttpResponse(200, 'skipped');
-    req.log.info({ name: action.name }, 'Hook');
+    req.set('action', action.name);
 
     const cleaned = cleanHook(res.hook);
 
