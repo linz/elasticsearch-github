@@ -9,6 +9,7 @@ export interface HookIndex {
   prefix: string;
   timestamp: string;
   hook: WebHookEnterpriseEvent;
+  computed?: Record<string, unknown>;
 }
 
 export interface HookAction<T extends WebHookEnterpriseEvent> {

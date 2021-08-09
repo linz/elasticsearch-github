@@ -95,6 +95,8 @@ class LambdaRequest {
       cleaned['@timestamp'] = res.timestamp;
       cleaned['@type'] = action.name;
 
+      if (res.computed) cleaned['computed'] = res.computed;
+
       const index = indexName(res.prefix, res.timestamp);
       await client.index({ index: index, body: res.hook, id: hookId });
       return new LambdaResponse(this, 200, 'ok');
