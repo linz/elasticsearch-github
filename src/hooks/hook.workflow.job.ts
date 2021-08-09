@@ -1,15 +1,21 @@
-import { WorkflowRunEvent } from '@octokit/webhooks-types';
 import { HookAction, HookIndex, WebhookEnterprise, WebHookEnterpriseEvent } from '../hook';
 
-export const WorkflowJobAction: HookAction<WorkflowRunEvent> = {
+export interface WorkflowJobCompletedEvent {
+  action: 'completed';
+  workflow_job: {
+    completed_at: string;
+  };
+}
+
+export const WorkflowJobAction: HookAction<WorkflowJobCompletedEvent> = {
   name: 'workflow_job',
-  is(type: string, e: WebHookEnterpriseEvent): e is WorkflowRunEvent {
+  is(type: string, e: WebHookEnterpriseEvent): e is WorkflowJobCompletedEvent {
     return type === 'workflow_job';
   },
 
-  process(hook: WorkflowRunEvent & WebhookEnterprise): HookIndex | null {
-    const updatedAt = hook.workflow_run.updated_at ?? new Date().toISOString();
+  process(hook: WorkflowJobCompletedEvent & WebhookEnterprise): HookIndex | null {
     if (hook.action !== 'completed') return null;
+    const updatedAt = hook.workflow_job.completed_at ?? new Date().toISOString();
     return { prefix: 'workflow', timestamp: updatedAt, hook };
   },
 };

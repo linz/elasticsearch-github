@@ -1,4 +1,5 @@
 import { WebhookEvent } from '@octokit/webhooks-types';
+import { WorkflowJobCompletedEvent } from './hooks/hook.workflow.job';
 
 export function indexName(type: string, date: string): string {
   return `github-hook-${type}-${date.slice(0, 7)}`;
@@ -23,4 +24,5 @@ export interface WebhookEnterprise {
   };
 }
 
-export type WebHookEnterpriseEvent = WebhookEvent & WebhookEnterprise;
+export type WebHookEvents = WebhookEvent | WorkflowJobCompletedEvent;
+export type WebHookEnterpriseEvent = WebHookEvents & WebhookEnterprise;

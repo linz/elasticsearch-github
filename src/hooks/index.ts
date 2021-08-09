@@ -1,5 +1,4 @@
-import { WebhookEvent } from '@octokit/webhooks-types';
-import { HookAction } from '../hook';
+import { HookAction, WebHookEvents } from '../hook';
 import { CheckRunAction } from './hook.check.run.complete';
 import { IssueCommentAction } from './hook.issue.comment';
 import { LabelAction } from './hook.label';
@@ -8,7 +7,7 @@ import { PushAction } from './hook.push';
 import { StarAction } from './hook.star';
 import { WorkflowJobAction } from './hook.workflow.job';
 
-export const HookActions: HookAction<WebhookEvent>[] = [
+export const HookActions: HookAction<WebHookEvents>[] = [
   CheckRunAction,
   PushAction,
   PullRequestCommentAction,
