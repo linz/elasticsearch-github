@@ -1,9 +1,9 @@
 import { PullRequestReviewCommentEvent } from '@octokit/webhooks-types';
-import { HookAction, HookIndex, WebHookEnterpriseEvent } from '../hook';
+import { HookAction, HookIndex } from '../hook';
 
 export const PullRequestCommentAction: HookAction<PullRequestReviewCommentEvent> = {
   name: 'pull_request_review_comment',
-  is(type: string, e: WebHookEnterpriseEvent): e is PullRequestReviewCommentEvent {
+  is(type: string, e: unknown): e is PullRequestReviewCommentEvent {
     return type === 'pull_request_review_comment';
   },
 

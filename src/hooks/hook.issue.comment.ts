@@ -1,9 +1,9 @@
 import { IssueCommentEvent } from '@octokit/webhooks-types';
-import { HookAction, HookIndex, WebHookEnterpriseEvent } from '../hook';
+import { HookAction, HookIndex } from '../hook';
 
 export const IssueCommentAction: HookAction<IssueCommentEvent> = {
   name: 'issue_comment',
-  is(type: string, e: WebHookEnterpriseEvent): e is IssueCommentEvent {
+  is(type: string, e: unknown): e is IssueCommentEvent {
     return type === 'issue_comment';
   },
 

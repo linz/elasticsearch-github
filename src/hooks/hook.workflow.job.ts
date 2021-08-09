@@ -1,4 +1,4 @@
-import { HookAction, HookIndex, WebhookEnterprise, WebHookEnterpriseEvent } from '../hook';
+import { HookAction, HookIndex, WebhookEnterprise } from '../hook';
 
 export interface WorkflowJobCompletedEvent {
   action: 'completed';
@@ -10,7 +10,7 @@ export interface WorkflowJobCompletedEvent {
 
 export const WorkflowJobAction: HookAction<WorkflowJobCompletedEvent> = {
   name: 'workflow_job',
-  is(type: string, e: WebHookEnterpriseEvent): e is WorkflowJobCompletedEvent {
+  is(type: string, e: unknown): e is WorkflowJobCompletedEvent {
     return type === 'workflow_job';
   },
 

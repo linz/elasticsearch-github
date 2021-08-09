@@ -14,7 +14,7 @@ export interface HookIndex {
 
 export interface HookAction<T extends WebHookEnterpriseEvent> {
   name: string;
-  is(type: string, e: WebHookEnterpriseEvent): e is T;
+  is(type: string, e: unknown): e is T;
   process(hook: T & WebhookEnterprise): HookIndex | null;
 }
 

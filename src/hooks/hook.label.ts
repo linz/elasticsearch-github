@@ -1,9 +1,9 @@
 import { LabelEvent } from '@octokit/webhooks-types';
-import { HookAction, HookIndex, WebhookEnterprise, WebHookEnterpriseEvent } from '../hook';
+import { HookAction, HookIndex, WebhookEnterprise } from '../hook';
 
 export const LabelAction: HookAction<LabelEvent> = {
   name: 'label',
-  is(type: string, e: WebHookEnterpriseEvent): e is LabelEvent {
+  is(type: string, e: unknown): e is LabelEvent {
     return type === 'label';
   },
 

@@ -1,9 +1,9 @@
 import { StarEvent } from '@octokit/webhooks-types';
-import { HookAction, HookIndex, WebhookEnterprise, WebHookEnterpriseEvent } from '../hook';
+import { HookAction, HookIndex, WebhookEnterprise } from '../hook';
 
 export const StarAction: HookAction<StarEvent> = {
   name: 'star',
-  is(type: string, e: WebHookEnterpriseEvent): e is StarEvent {
+  is(type: string, e: unknown): e is StarEvent {
     return type === 'star';
   },
 

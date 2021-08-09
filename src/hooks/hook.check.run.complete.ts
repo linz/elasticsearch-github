@@ -1,10 +1,10 @@
-import { CheckRunCompletedEvent, WebhookEvent } from '@octokit/webhooks-types';
+import { CheckRunCompletedEvent } from '@octokit/webhooks-types';
 import { HookAction, HookIndex, WebhookEnterprise } from '../hook';
 
 export const CheckRunAction: HookAction<CheckRunCompletedEvent> = {
   name: 'check_run',
-  is(type: string, e: WebhookEvent): e is CheckRunCompletedEvent {
-    return 'check_run' in e && e.action === 'completed';
+  is(type: string, e: unknown): e is CheckRunCompletedEvent {
+    return type === 'check_run';
   },
 
   process(hook: CheckRunCompletedEvent & WebhookEnterprise): HookIndex {
