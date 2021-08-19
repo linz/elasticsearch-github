@@ -504,10 +504,10 @@
   resolved "https://registry.yarnpkg.com/@humanwhocodes/object-schema/-/object-schema-1.2.0.tgz#87de7af9c231826fdd68ac7258f77c429e0e5fcf"
   integrity sha512-wdppn25U8z/2yiaT6YGquE6X8sSv7hNMWSXYSSU1jGv/yd6XqjXgTDJ8KP4NgjTXfJ3GbRjeeb8RTV7a/VpM+w==
 
-"@linzjs/lambda@^0.3.1":
-  version "0.3.1"
-  resolved "https://registry.yarnpkg.com/@linzjs/lambda/-/lambda-0.3.1.tgz#6039803cc1a02ca73ac3ae0cb2b19208d0b941dd"
-  integrity sha512-cuv4GXZAlu9/CKVQLQpDA/VjyatHgzMHcHwrnBFvtTPQynDaP8AgAfLGKMQIIbemf548gm48IR9AwbqKluHefA==
+"@linzjs/lambda@^0.3.2":
+  version "0.3.2"
+  resolved "https://registry.yarnpkg.com/@linzjs/lambda/-/lambda-0.3.2.tgz#becc4b4ef14e2b6156c150193308804591d3431d"
+  integrity sha512-vAV8Bx/PssY6kNmfZ0+jaqz3q0EIRSe12B08eymlC52Uvkdv0ht1iLtZokdGRAywM+ZiKczSE3F8WvB/+zOijQ==
   dependencies:
     "@linzjs/metrics" "^6.0.0"
     "@types/pino" "^6.3.11"
