@@ -41,7 +41,7 @@ export const handler = LambdaFunction.wrap(async (req: LambdaHttpRequest): Promi
     const cleaned = cleanHook(res.hook);
 
     cleaned['@timestamp'] = res.timestamp;
-    cleaned['@type'] = action.name;
+    cleaned['@type'] = hookType;
 
     if (res.computed) cleaned['computed'] = res.computed;
 
