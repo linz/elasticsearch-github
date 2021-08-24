@@ -8,10 +8,6 @@ export const PullRequestCommentAction: HookAction<PullRequestReviewCommentEvent>
   },
 
   process(hook: PullRequestReviewCommentEvent): HookIndex | null {
-    return {
-      prefix: 'comment',
-      timestamp: hook.comment.created_at,
-      hook,
-    };
+    return { timestamp: hook.comment.created_at, hook };
   },
 };

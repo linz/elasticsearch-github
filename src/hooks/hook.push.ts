@@ -9,10 +9,6 @@ export const PushAction: HookAction<PushEvent> = {
 
   process(hook: PushEvent & WebhookEnterprise): HookIndex | null {
     if (hook.commits.length === 0) return null;
-    return {
-      prefix: 'push',
-      timestamp: new Date().toISOString(),
-      hook,
-    };
+    return { timestamp: new Date().toISOString(), hook };
   },
 };

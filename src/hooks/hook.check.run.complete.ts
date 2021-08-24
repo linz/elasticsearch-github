@@ -8,10 +8,6 @@ export const CheckRunAction: HookAction<CheckRunCompletedEvent> = {
   },
 
   process(hook: CheckRunCompletedEvent & WebhookEnterprise): HookIndex {
-    return {
-      prefix: 'check',
-      timestamp: hook.check_run.completed_at,
-      hook,
-    };
+    return { timestamp: hook.check_run.completed_at, hook };
   },
 };

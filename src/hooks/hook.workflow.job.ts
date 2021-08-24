@@ -18,7 +18,6 @@ export const WorkflowJobAction: HookAction<WorkflowJobCompletedEvent> = {
     if (hook.action !== 'completed') return null;
     const updatedAt = hook.workflow_job.completed_at ?? new Date().toISOString();
     return {
-      prefix: 'workflow',
       timestamp: updatedAt,
       hook,
       computed: {

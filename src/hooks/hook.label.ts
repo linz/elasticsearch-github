@@ -8,10 +8,6 @@ export const LabelAction: HookAction<LabelEvent> = {
   },
 
   process(hook: LabelEvent & WebhookEnterprise): HookIndex | null {
-    return {
-      prefix: 'label',
-      timestamp: new Date().toISOString(),
-      hook,
-    };
+    return { timestamp: new Date().toISOString(), hook };
   },
 };

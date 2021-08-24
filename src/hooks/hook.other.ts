@@ -7,6 +7,6 @@ export const OtherAction: HookAction<WebHookEnterpriseEvent> = {
   },
 
   process(hook: WebHookEnterpriseEvent): HookIndex | null {
-    return { prefix: 'other', timestamp: new Date().toISOString(), hook };
+    return { timestamp: new Date().toISOString(), hook };
   },
 };

@@ -45,7 +45,7 @@ export const handler = LambdaFunction.wrap(async (req: LambdaHttpRequest): Promi
 
     if (res.computed) cleaned['computed'] = res.computed;
 
-    const index = indexName(res.prefix, res.timestamp);
+    const index = indexName(res.timestamp);
     await client.index({ index: index, body: res.hook, id: hookId });
     return new LambdaHttpResponse(200, 'ok');
   }

@@ -9,6 +9,6 @@ export const StarAction: HookAction<StarEvent> = {
 
   process(hook: StarEvent & WebhookEnterprise): HookIndex | null {
     const staredAt = hook.starred_at ?? new Date().toISOString();
-    return { prefix: 'star', timestamp: staredAt, hook };
+    return { timestamp: staredAt, hook };
   },
 };
