@@ -4,4 +4,4 @@ import 'dotenv/config';
 
 const app = new App();
 
-new GithubWebhookStack(app, 'WebhookToEs');
+new GithubWebhookStack(app, 'GithubWebhook');
