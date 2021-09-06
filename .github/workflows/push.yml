@@ -31,4 +31,4 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/v')
         run: npx conventional-github-releaser
         env:
-          NODE_AUTH_TOKEN: ${{secrets.GH_TOKEN}}
+          CONVENTIONAL_GITHUB_RELEASER_TOKEN: ${{secrets.GITHUB_TOKEN}}
