@@ -1,3 +1,13 @@
+<a name="0.0.3"></a>
+## [0.0.3](https://github.com/linz/elasticsearch-github/compare/v0.0.2...v0.0.3) (2021-09-06)
+
+
+### Features
+
+* linzjs/lambda v1.1.0 ([1feda9f](https://github.com/linz/elasticsearch-github/commit/1feda9f))
+
+
+
 <a name="0.0.2"></a>
 ## 0.0.2 (2021-09-06)
 
