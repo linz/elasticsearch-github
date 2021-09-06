@@ -15,6 +15,7 @@ export const WorkflowJobAction: HookAction<WorkflowJobCompletedEvent> = {
   },
 
   process(hook: WorkflowJobCompletedEvent & WebhookEnterprise): HookIndex | null {
+    if (hook.action !== 'completed') return null;
     const updatedAt = hook.workflow_job.completed_at ?? new Date().toISOString();
     return {
       timestamp: updatedAt,
