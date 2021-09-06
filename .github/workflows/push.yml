@@ -29,6 +29,6 @@ jobs:
 
       - name: Publish to NPM
         if: startsWith(github.ref, 'refs/tags/v')
-        run: yarn publish
+        run: npx conventional-github-releaser
         env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN_LINZJS}}
+          NODE_AUTH_TOKEN: ${{secrets.GH_TOKEN}}
