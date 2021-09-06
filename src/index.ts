@@ -1,5 +1,5 @@
 import { Client } from '@elastic/elasticsearch';
-import { LambdaFunction, LambdaHttpRequest, LambdaHttpResponse } from '@linzjs/lambda';
+import { lf, LambdaHttpRequest, LambdaHttpResponse } from '@linzjs/lambda';
 import { createHmac } from 'crypto';
 import { cleanHook } from './clean';
 import { indexName } from './hook';
@@ -18,7 +18,7 @@ if (ElasticCredentials.username === '') throw new Error('Missing $ELASTIC_CLOUD_
 
 export const client = new Client({ cloud: ElasticCredentials });
 
-export const handler = LambdaFunction.wrap(async (req: LambdaHttpRequest): Promise<LambdaHttpResponse> => {
+export const handler = lf.http(async (req: LambdaHttpRequest): Promise<LambdaHttpResponse> => {
   if (HmacSecret == null) throw new LambdaHttpResponse(500, 'Invalid $GITHUB_WEBHOOK_SECRET');
 
   if (req.body == null) throw new LambdaHttpResponse(500, 'Invalid request no body');
