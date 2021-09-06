@@ -1,3 +1,13 @@
+<a name="0.1.1"></a>
+## [0.1.1](https://github.com/linz/elasticsearch-github/compare/v0.1.0...v0.1.1) (2021-09-06)
+
+
+### Features
+
+* force fetch depth so changelog can be generated ([680ec47](https://github.com/linz/elasticsearch-github/commit/680ec47))
+
+
+
 <a name="0.1.0"></a>
 # [0.1.0](https://github.com/linz/elasticsearch-github/compare/v0.0.4...v0.1.0) (2021-09-06)
 
