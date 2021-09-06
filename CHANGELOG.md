@@ -1,3 +1,13 @@
+<a name="0.1.0"></a>
+# [0.1.0](https://github.com/linz/elasticsearch-github/compare/v0.0.4...v0.1.0) (2021-09-06)
+
+
+### Features
+
+* force angular style for changelogs ([865fdbb](https://github.com/linz/elasticsearch-github/commit/865fdbb))
+
+
+
 <a name="0.0.4"></a>
 ## [0.0.4](https://github.com/linz/elasticsearch-github/compare/v0.0.3...v0.0.4) (2021-09-06)
 
