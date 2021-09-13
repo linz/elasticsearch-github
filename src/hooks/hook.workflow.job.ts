@@ -1,4 +1,4 @@
-import { HookAction, HookIndex, WebhookEnterprise } from '../hook';
+import { HookAction, HookIndex, WebhookEnterprise } from '../hook.js';
 
 export interface WorkflowJobCompletedEvent {
   action: 'completed';

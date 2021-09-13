@@ -1,5 +1,5 @@
 import { LabelEvent } from '@octokit/webhooks-types';
-import { HookAction, HookIndex, WebhookEnterprise } from '../hook';
+import { HookAction, HookIndex, WebhookEnterprise } from '../hook.js';
 
 export const LabelAction: HookAction<LabelEvent> = {
   name: 'label',

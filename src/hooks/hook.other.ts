@@ -1,4 +1,4 @@
-import { HookAction, HookIndex, WebHookEnterpriseEvent } from '../hook';
+import { HookAction, HookIndex, WebHookEnterpriseEvent } from '../hook.js';
 
 export const OtherAction: HookAction<WebHookEnterpriseEvent> = {
   name: 'other',

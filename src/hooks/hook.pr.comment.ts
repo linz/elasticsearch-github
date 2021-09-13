@@ -1,5 +1,5 @@
 import { PullRequestReviewCommentEvent } from '@octokit/webhooks-types';
-import { HookAction, HookIndex } from '../hook';
+import { HookAction, HookIndex } from '../hook.js';
 
 export const PullRequestCommentAction: HookAction<PullRequestReviewCommentEvent> = {
   name: 'pull_request_review_comment',

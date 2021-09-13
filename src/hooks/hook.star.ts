@@ -1,5 +1,5 @@
 import { StarEvent } from '@octokit/webhooks-types';
-import { HookAction, HookIndex, WebhookEnterprise } from '../hook';
+import { HookAction, HookIndex, WebhookEnterprise } from '../hook.js';
 
 export const StarAction: HookAction<StarEvent> = {
   name: 'star',
