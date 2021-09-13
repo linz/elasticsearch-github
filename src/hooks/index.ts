@@ -1,12 +1,12 @@
-import { HookAction, WebHookEvents } from '../hook';
-import { CheckRunAction } from './hook.check.run.complete';
-import { IssueCommentAction } from './hook.issue.comment';
-import { LabelAction } from './hook.label';
-import { OtherAction } from './hook.other';
-import { PullRequestCommentAction } from './hook.pr.comment';
-import { PushAction } from './hook.push';
-import { StarAction } from './hook.star';
-import { WorkflowJobAction } from './hook.workflow.job';
+import { HookAction, WebHookEvents } from '../hook.js';
+import { CheckRunAction } from './hook.check.run.complete.js';
+import { IssueCommentAction } from './hook.issue.comment.js';
+import { LabelAction } from './hook.label.js';
+import { OtherAction } from './hook.other.js';
+import { PullRequestCommentAction } from './hook.pr.comment.js';
+import { PushAction } from './hook.push.js';
+import { StarAction } from './hook.star.js';
+import { WorkflowJobAction } from './hook.workflow.job.js';
 
 export const HookActions: HookAction<WebHookEvents>[] = [
   CheckRunAction,

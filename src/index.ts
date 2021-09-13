@@ -1,9 +1,9 @@
 import { Client } from '@elastic/elasticsearch';
 import { lf, LambdaHttpRequest, LambdaHttpResponse } from '@linzjs/lambda';
 import { createHmac } from 'crypto';
-import { cleanHook } from './clean';
-import { indexName } from './hook';
-import { HookActions } from './hooks';
+import { cleanHook } from './clean.js';
+import { indexName } from './hook.js';
+import { HookActions } from './hooks/index.js';
 
 const HmacSecret = process.env.GITHUB_WEBHOOK_SECRET;
 const ElasticCredentials = {

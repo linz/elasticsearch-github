@@ -1,5 +1,5 @@
 import { IssueCommentEvent } from '@octokit/webhooks-types';
-import { HookAction, HookIndex } from '../hook';
+import { HookAction, HookIndex } from '../hook.js';
 
 export const IssueCommentAction: HookAction<IssueCommentEvent> = {
   name: 'issue_comment',

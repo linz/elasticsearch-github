@@ -11,6 +11,10 @@
     "url": "https://linz.govt.nz",
     "organization": true
   },
+  "type": "module",
+  "engines": {
+    "node": "^12.20.0 || ^14.13.1 || >=16.0.0"
+  },
   "devDependencies": {
     "@aws-cdk/aws-apigateway": "^1.117.0",
     "@aws-cdk/aws-lambda-nodejs": "^1.117.0",

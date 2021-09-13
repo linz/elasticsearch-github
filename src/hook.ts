@@ -1,5 +1,5 @@
 import { WebhookEvent } from '@octokit/webhooks-types';
-import { WorkflowJobCompletedEvent } from './hooks/hook.workflow.job';
+import { WorkflowJobCompletedEvent } from './hooks/hook.workflow.job.js';
 
 export function indexName(date: string): string {
   return `github-hook-${date.slice(0, 7)}`;
