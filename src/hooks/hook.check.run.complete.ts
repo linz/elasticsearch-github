@@ -7,7 +7,8 @@ export const CheckRunAction: HookAction<CheckRunCompletedEvent> = {
     return type === 'check_run';
   },
 
-  process(hook: CheckRunCompletedEvent & WebhookEnterprise): HookIndex {
-    return { timestamp: hook.check_run.completed_at, hook };
+  process(hook: CheckRunCompletedEvent & WebhookEnterprise): HookIndex | null {
+    if (hook.action !== 'completed') return null;
+    return { timestamp: hook.check_run.completed_at ?? new Date().toISOString(), hook };
   },
 };
