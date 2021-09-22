@@ -465,10 +465,10 @@
   resolved "https://registry.yarnpkg.com/@balena/dockerignore/-/dockerignore-1.0.2.tgz#9ffe4726915251e8eb69f44ef3547e0da2c03e0d"
   integrity sha512-wMue2Sy4GAVTk6Ic4tJVcnfdau+gx2EnG7S+uAEe+TWJFqE4YoWN4/H8MSLj4eYJKxGg26lZwboEniNiNwZQ6Q==
 
-"@elastic/elasticsearch@^7.14.0":
-  version "7.14.0"
-  resolved "https://registry.yarnpkg.com/@elastic/elasticsearch/-/elasticsearch-7.14.0.tgz#250d939c2dee41f92282ca8916b0eb11bca61094"
-  integrity sha512-BlxqykcNtdBxo0mF7UQ1OsUxoVOOnEaeF70u2N4jpePih9paCOOotTWfFSDrtEw0TWv1CZlzCGD3TD5+8ASx8A==
+"@elastic/elasticsearch@^7.14.1":
+  version "7.14.1"
+  resolved "https://registry.yarnpkg.com/@elastic/elasticsearch/-/elasticsearch-7.14.1.tgz#da2f86a550e75c093cc1114115e8719cc7edbfc7"
+  integrity sha512-pnbh8ddXdxlQdZZfMCwxIIv8KscdhJysVI4ZAc9pBl/cUrLinAj+0gIyTgWA30cOFoKZSLlB9ZXGx6R0SJkIwg==
   dependencies:
     debug "^4.3.1"
     hpagent "^0.1.1"
