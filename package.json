@@ -40,6 +40,6 @@
     "build/src/**"
   ],
   "dependencies": {
-    "@linzjs/lambda": "^1.1.0"
+    "@linzjs/lambda": "^2.0.0"
   }
 }
