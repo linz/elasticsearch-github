@@ -21,7 +21,7 @@
     "@aws-cdk/core": "^1.117.0",
     "@elastic/elasticsearch": "^7.14.1",
     "@linzjs/style": "^3.1.0",
-    "@octokit/webhooks-types": "^4.8.0",
+    "@octokit/webhooks-types": "^4.15.0",
     "@types/aws-lambda": "^8.10.83",
     "@types/node": "^16.9.6",
     "@types/pino": "^6.3.11",
