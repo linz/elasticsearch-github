@@ -19,7 +19,7 @@
     "@aws-cdk/aws-apigateway": "^1.117.0",
     "@aws-cdk/aws-lambda-nodejs": "^1.117.0",
     "@aws-cdk/core": "^1.117.0",
-    "@elastic/elasticsearch": "^7.14.1",
+    "@elastic/elasticsearch": "^8.2.0",
     "@linzjs/style": "^3.7.0",
     "@octokit/webhooks-types": "^4.8.0",
     "@types/aws-lambda": "^8.10.93",
