@@ -77,10 +77,10 @@
   resolved "https://registry.yarnpkg.com/@humanwhocodes/object-schema/-/object-schema-1.2.1.tgz#b520529ec21d8e5945a1851dfd1c32e94e39ff45"
   integrity sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==
 
-"@linzjs/lambda@^3.1.0":
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/@linzjs/lambda/-/lambda-3.1.0.tgz#5d7df119923a3273188da3787e3049248dac0a99"
-  integrity sha512-OF8eCXkj3OElpYZ7jNQ9meSkI1qLQ6naHj/+U09/C9IV5QkG6rcO0OIn36ELijT/wrGtD++cG6gyVbdI9SsFVA==
+"@linzjs/lambda@^3.1.1":
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/@linzjs/lambda/-/lambda-3.1.1.tgz#02cbd00af402815845bf036804cf6f7b843f158a"
+  integrity sha512-nGYxL/Xgm7RzcrsT4QMPHFuiasvzeTfkV47aa+10FhZGuESKYJDC1+s9k7vdaHwls6Q8MgbnSJvkP7++pQfHOg==
   dependencies:
     "@linzjs/metrics" "^6.21.1"
     pino "^7.9.1"

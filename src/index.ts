@@ -23,7 +23,7 @@ export const client = new Client({
 
 export const handler = lf.http();
 
-handler.router.all('*', async (req: LambdaHttpRequest): Promise<LambdaHttpResponse> => {
+handler.router.post('/', async (req: LambdaHttpRequest): Promise<LambdaHttpResponse> => {
   if (HmacSecret == null) throw new LambdaHttpResponse(500, 'Invalid $GITHUB_WEBHOOK_SECRET');
 
   if (req.body == null) throw new LambdaHttpResponse(500, 'Invalid request no body');

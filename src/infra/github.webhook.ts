@@ -1,6 +1,6 @@
-import { LambdaRestApi } from 'aws-cdk-lib/aws-apigateway';
+import { CfnOutput, Stack, StackProps } from 'aws-cdk-lib';
+import { FunctionUrl, FunctionUrlAuthType, Runtime } from 'aws-cdk-lib/aws-lambda';
 import { NodejsFunction } from 'aws-cdk-lib/aws-lambda-nodejs';
-import { CfnOutput, Stack, StackProps } from 'aws-cdk-lib/core';
 import { execFileSync } from 'child_process';
 import { Construct } from 'constructs';
 
@@ -10,6 +10,7 @@ export class GithubWebhookStack extends Stack {
 
     const lambda = new NodejsFunction(this, 'WebhookLambda', {
       entry: './build/src/index.js',
+      runtime: Runtime.NODEJS_16_X,
       handler: 'handler',
       environment: {
         GITHUB_WEBHOOK_SECRET: process.env.GITHUB_WEBHOOK_SECRET ?? '',
@@ -20,7 +21,12 @@ export class GithubWebhookStack extends Stack {
         GIT_VERSION: execFileSync('git', ['describe', '--tags', '--always', '--match', 'v*']).toString().trim(),
       },
     });
-    const restApi = new LambdaRestApi(this, 'WebhookApi', { handler: lambda });
-    new CfnOutput(this, 'Url', { value: restApi.url });
+
+    const functionUrl = new FunctionUrl(this, 'WebhookUrl', {
+      authType: FunctionUrlAuthType.NONE,
+      function: lambda,
+    });
+    // const restApi = new LambdaRestApi(this, 'WebhookApi', { handler: lambda });
+    new CfnOutput(this, 'Url', { value: functionUrl.url });
   }
 }
