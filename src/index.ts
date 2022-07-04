@@ -16,9 +16,14 @@ if (ElasticCredentials.id === '') throw new Error('Missing $ELASTIC_CLOUD_ID');
 if (ElasticCredentials.password === '') throw new Error('Missing $ELASTIC_CLOUD_PASSWORD');
 if (ElasticCredentials.username === '') throw new Error('Missing $ELASTIC_CLOUD_USERNAME');
 
-export const client = new Client({ cloud: ElasticCredentials });
+export const client = new Client({
+  cloud: { id: ElasticCredentials.id },
+  auth: { username: ElasticCredentials.username, password: ElasticCredentials.password },
+});
 
-export const handler = lf.http(async (req: LambdaHttpRequest): Promise<LambdaHttpResponse> => {
+export const handler = lf.http();
+
+handler.router.all('*', async (req: LambdaHttpRequest): Promise<LambdaHttpResponse> => {
   if (HmacSecret == null) throw new LambdaHttpResponse(500, 'Invalid $GITHUB_WEBHOOK_SECRET');
 
   if (req.body == null) throw new LambdaHttpResponse(500, 'Invalid request no body');

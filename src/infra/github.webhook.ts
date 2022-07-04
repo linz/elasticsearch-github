@@ -1,7 +1,8 @@
-import { LambdaRestApi } from '@aws-cdk/aws-apigateway';
-import { NodejsFunction } from '@aws-cdk/aws-lambda-nodejs';
-import { CfnOutput, Construct, Stack, StackProps } from '@aws-cdk/core';
+import { LambdaRestApi } from 'aws-cdk-lib/aws-apigateway';
+import { NodejsFunction } from 'aws-cdk-lib/aws-lambda-nodejs';
+import { CfnOutput, Stack, StackProps } from 'aws-cdk-lib/core';
 import { execFileSync } from 'child_process';
+import { Construct } from 'constructs';
 
 export class GithubWebhookStack extends Stack {
   constructor(scope?: Construct, id?: string, props?: StackProps) {
