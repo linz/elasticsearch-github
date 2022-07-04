@@ -26,7 +26,6 @@ export class GithubWebhookStack extends Stack {
       authType: FunctionUrlAuthType.NONE,
       function: lambda,
     });
-    // const restApi = new LambdaRestApi(this, 'WebhookApi', { handler: lambda });
     new CfnOutput(this, 'Url', { value: functionUrl.url });
   }
 }
