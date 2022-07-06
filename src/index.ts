@@ -51,7 +51,13 @@ handler.router.post('/', async (req: LambdaHttpRequest): Promise<LambdaHttpRespo
     if (res.computed) cleaned['computed'] = res.computed;
 
     const index = indexName(res.timestamp);
-    await client.index({ index: index, body: res.hook, id: hookId });
+    try {
+      await client.index({ index: index, body: res.hook, id: hookId });
+    } catch (e) {
+      // On failure log the entire hook as a string or it could overwhelm the key limit for a ES index
+      req.set('githubHook', JSON.stringify(res.hook));
+      throw e;
+    }
     return new LambdaHttpResponse(200, 'ok');
   }
 
