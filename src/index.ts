@@ -50,7 +50,7 @@ handler.router.post('/', async (req: LambdaHttpRequest): Promise<LambdaHttpRespo
 
     if (res.computed) cleaned['computed'] = res.computed;
 
-    const index = indexName(res.timestamp);
+    const index = indexName(new Date().toISOString());
     try {
       await client.index({ index: index, body: res.hook, id: hookId });
     } catch (e) {
