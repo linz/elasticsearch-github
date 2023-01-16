@@ -25,7 +25,7 @@
     "@types/pino": "^7.0.5",
     "aws-cdk": "^2.30.0",
     "aws-cdk-lib": "^2.30.0",
-    "constructs": "^10.1.43",
+    "constructs": "^10.1.221",
     "conventional-changelog-cli": "^2.2.2",
     "conventional-github-releaser": "^3.1.5",
     "dotenv": "^16.0.1"
