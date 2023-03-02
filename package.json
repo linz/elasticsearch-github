@@ -23,7 +23,7 @@
     "@types/aws-lambda": "^8.10.101",
     "@types/node": "^18.0.1",
     "@types/pino": "^7.0.5",
-    "aws-cdk": "^2.30.0",
+    "aws-cdk": "^2.67.0",
     "aws-cdk-lib": "^2.30.0",
     "constructs": "^10.1.43",
     "conventional-changelog-cli": "^2.2.2",
