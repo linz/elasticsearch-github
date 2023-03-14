@@ -20,7 +20,7 @@
     "@linzjs/style": "^3.8.0",
     "@linzjs/lambda": "^3.1.1",
     "@octokit/webhooks-types": "^6.1.1",
-    "@types/aws-lambda": "^8.10.101",
+    "@types/aws-lambda": "^8.10.112",
     "@types/node": "^18.0.1",
     "@types/pino": "^7.0.5",
     "aws-cdk": "^2.30.0",
