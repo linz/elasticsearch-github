@@ -16,7 +16,7 @@
     "node": "^12.20.0 || ^14.13.1 || >=16.0.0"
   },
   "devDependencies": {
-    "@elastic/elasticsearch": "^8.2.1",
+    "@elastic/elasticsearch": "^8.8.0",
     "@linzjs/style": "^3.8.0",
     "@linzjs/lambda": "^3.1.1",
     "@octokit/webhooks-types": "^6.1.1",
