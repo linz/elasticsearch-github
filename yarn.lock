@@ -125,10 +125,10 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@octokit/webhooks-types@^6.1.1":
-  version "6.1.1"
-  resolved "https://registry.yarnpkg.com/@octokit/webhooks-types/-/webhooks-types-6.1.1.tgz#4bd9ed4643f27474e7c129e1040631205d04afee"
-  integrity sha512-kV0XF+qIFnfnYiAWwni92YdnoNRrUIYVAk/VlyLPyW+WEq806AwHSSJK4JyDM2xPxESsAx79dOsWPLs5bMG9Yg==
+"@octokit/webhooks-types@^7.0.2":
+  version "7.0.2"
+  resolved "https://registry.yarnpkg.com/@octokit/webhooks-types/-/webhooks-types-7.0.2.tgz#cc35efc01bcf3e0f18da6eed6ddfe4aacc793701"
+  integrity sha512-lmxpnApoRaj8AEtHXp6Dso4IMHTL+YOphjCYYbu2G6BbXiqaO6tPQF5tO14ItpLkiwbgBiTj2m4xWGRkjAcT2A==
 
 "@sindresorhus/is@^0.7.0":
   version "0.7.0"
